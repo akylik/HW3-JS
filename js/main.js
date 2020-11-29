@@ -4,40 +4,40 @@ console.log(findMax(3295566));
 
 
 // 2
-const pow = function (x, n) {
+const degreeOfNumber = (x, n) => {
    let result = x;
    for (let i = 1; i < n; i++) {
       result *= x;
    }
    return result;
 }
-console.log(pow(2, 4));
+console.log(degreeOfNumber(2, 4));
 
 
 // 3
-const cursiveLetter = function (name) {
-   return name[0].toUpperCase() + name.slice(1);
+const cursiveLetter = (name) => {                              
+   return name[0].toUpperCase() + name.slice(1);        
 }
 console.log(cursiveLetter('i will be back'));
 
 
 // 4
-const profit = function (countProfit) {
-   return countProfit - (countProfit * 19.5 / 100);
+const profit = (countProfit) => {                        
+   return countProfit - (countProfit * 19.5 / 100);      
+
 }
 console.log(profit(1000));
 
 
 // 5
-const random = function (min, max) {
-   let rand = min + Math.random() * (max + 1 - min);
-   return Math.floor(rand);
+const randomNumber = (min, max) => {
+   return Math.floor(min + Math.random() * (max + 1 - min));
 }
-console.log(random(2, 5));
+console.log(randomNumber(2, 5));
 
 
 // 6
-const countLatter = function (letter, word) {
+const countLatter = (letter, word) => {
    let count = 0;
    const wordLength = word.length;
    for (let i = 0; i < wordLength; i++) {
@@ -51,7 +51,7 @@ console.log(countLatter('а', 'Асталависта'));
 
 
 // 7
-const convertCurency = function (convert) {
+const convertCurency = (convert) => {
    const curencyDoll = 25;
    let result = 0;
    if (convert.slice(-3) === 'UAH' || convert.slice(-3) === 'uah') {
@@ -68,7 +68,7 @@ console.log(convertCurency('100$'));
 
 
 // 8
-const getRandomPassword = function (genPass = 8) {
+const getRandomPassword = (genPass = 8) => {
    for (let i = 0; i < genPass; i++) {
       return +Math.random().toString().slice(-genPass);
    }
@@ -77,19 +77,19 @@ console.log(getRandomPassword(6));
 
 
 // 9
-const deletLetters = function (enterLetter, enterWord) {
+const deletLetters = (enterLetter, enterWord) => {
    return enterWord.replaceAll(enterLetter, '');
 }
 console.log(deletLetters('а', 'блаблабла'));
 
 
 // 10
-const isPalyndrom = function (someWord) {
+const isPalyndrom = (someWord) => {
    let someWordRevers = someWord.split('').reverse().join('');
    if (someWordRevers == someWord) {
-      return 'yes';
+      return true;
    } else {
-      return 'no'
+      return false;
    }
 }
 console.log(isPalyndrom('мадам'));
